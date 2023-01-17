@@ -66,6 +66,23 @@ public class Insertion_Deletion_print_in_linkedlist {
         head = head.next;
     }
 
+    public void deleteLast() {
+        if (head == null) {
+            System.out.println("the list is empty");
+            return;
+        }
+        if (head.next==null){
+            head = null;
+            return;
+        }
+        Node SecondLast = head;
+        Node lastNode = head.next;
+        while(lastNode.next!=null){
+            lastNode = lastNode.next;
+            SecondLast = SecondLast.next;
+        }
+        SecondLast.next = null;
+    }
 
     public static void main(String args[]){
 
@@ -75,6 +92,10 @@ public class Insertion_Deletion_print_in_linkedlist {
         linkedlist.addLast("List");
         linkedlist.addFirst("this");
 
+        linkedlist.printList();
+
+        linkedlist.deleteFirst();;
+        linkedlist.deleteLast();
         linkedlist.printList();
     }
 }
